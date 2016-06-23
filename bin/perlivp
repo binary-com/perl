@@ -44,7 +44,7 @@ my $error_total = 0;
 my $tests_total = 0;
 
 my $perlpath = '/home/git/binary-com/perl/bin/perl';
-my $useithreads = 'define';
+my $useithreads = '';
 
 print "## Checking Perl binary via variable '\$perlpath' = $perlpath.\n" if $opt{'p'};
 
