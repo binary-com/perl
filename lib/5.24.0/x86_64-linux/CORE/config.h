@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Thu Jun 23 02:23:38 UTC 2016
+ * Configuration time: Tue Nov 22 05:16:56 UTC 2016
  * Configured by     : nobody
- * Target system     : linux qa22.regentmarkets.com 3.2.0-4-amd64 #1 smp debian 3.2.78-1 x86_64 gnulinux 
+ * Target system     : linux qa23.regentmarkets.com 3.2.0-4-amd64 #1 smp debian 3.2.82-1 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1440,7 +1440,7 @@
  *	and architecture-specific directories.  See PERL_INC_VERSION_LIST
  *	for more details.
  */
-/*#define PERL_OTHERLIBDIRS " "		/ **/
+#define PERL_OTHERLIBDIRS "/home/git/regentmarkets/cpan/local/lib/perl5/"		/**/
 
 /* PRIVLIB:
  *	This symbol contains the name of the private library for this package.
