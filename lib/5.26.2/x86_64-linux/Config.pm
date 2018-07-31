@@ -106,6 +106,6 @@ tie %Config, 'Config', {
     sitelibexp => '/home/git/binary-com/perl/lib/site_perl/5.26.2',
     so => 'so',
     useithreads => undef,
-    usevendorprefix => undef,
+    usevendorprefix => 'define',
     version => '5.26.2',
 };

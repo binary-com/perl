@@ -9,7 +9,7 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Fri May 18 05:25:50 UTC 2018
+ * Configuration time: Mon Jul 30 11:50:48 UTC 2018
  * Configured by     : git
  * Target system     : linux default-debian-7 3.2.0-5-amd64 #1 smp debian 3.2.96-3 x86_64 gnulinux 
  */
@@ -1440,7 +1440,7 @@
  *	and architecture-specific directories.  See PERL_INC_VERSION_LIST
  *	for more details.
  */
-#define PERL_OTHERLIBDIRS "/home/git/regentmarkets/cpan/local/lib/perl5/"		/**/
+/*#define PERL_OTHERLIBDIRS " "		/ **/
 
 /* PRIVLIB:
  *	This symbol contains the name of the private library for this package.
@@ -1512,8 +1512,8 @@
  *	This symbol contains the ~name expanded version of PERL_VENDORARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-/*#define PERL_VENDORARCH ""		/ **/
-/*#define PERL_VENDORARCH_EXP ""		/ **/
+#define PERL_VENDORARCH "/home/git/regentmarkets/cpan/local/lib/perl5/x86_64-linux"		/**/
+#define PERL_VENDORARCH_EXP "/home/git/regentmarkets/cpan/local/lib/perl5/x86_64-linux"		/**/
 
 /* PERL_VENDORLIB_EXP:
  *	This symbol contains the ~name expanded version of VENDORLIB, to be used
@@ -1524,8 +1524,8 @@
  *	removed.  The elements in inc_version_list (inc_version_list.U) can
  *	be tacked onto this variable to generate a list of directories to search.
  */
-/*#define PERL_VENDORLIB_EXP ""		/ **/
-/*#define PERL_VENDORLIB_STEM ""		/ **/
+#define PERL_VENDORLIB_EXP "/home/git/regentmarkets/cpan/local/lib/perl5"		/**/
+#define PERL_VENDORLIB_STEM "/home/git/regentmarkets/cpan/local/lib/perl5"		/**/
 
 /* OSNAME:
  *	This symbol contains the name of the operating system, as determined
