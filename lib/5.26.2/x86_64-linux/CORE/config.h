@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Mon Jul 30 11:50:48 UTC 2018
- * Configured by     : git
- * Target system     : linux default-debian-7 3.2.0-5-amd64 #1 smp debian 3.2.96-3 x86_64 gnulinux 
+ * Configuration time: Wed Feb 26 04:12:41 UTC 2020
+ * Configured by     : zak
+ * Target system     : linux qa17.regentmarkets.com 4.9.0-11-amd64 #1 smp debian 4.9.189-3+deb9u1 (2019-09-20) x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1227,13 +1227,13 @@
  *	This symbol is defined if using the FILE_ptr macro as an lvalue
  *	to increase the pointer by n leaves File_cnt(fp) unchanged.
  */
-#define USE_STDIO_PTR 	/**/
+/*#define USE_STDIO_PTR 	/ **/
 #ifdef USE_STDIO_PTR
 #define FILE_ptr(fp)	((fp)->_IO_read_ptr)
-#define STDIO_PTR_LVALUE 		/**/
+/*#define STDIO_PTR_LVALUE 		/ **/
 #define FILE_cnt(fp)	((fp)->_IO_read_end - (fp)->_IO_read_ptr)
 /*#define STDIO_CNT_LVALUE 		/ **/
-#define STDIO_PTR_LVAL_SETS_CNT	/**/
+/*#define STDIO_PTR_LVAL_SETS_CNT	/ **/
 /*#define STDIO_PTR_LVAL_NOCHANGE_CNT	/ **/
 #endif
 
@@ -1257,7 +1257,7 @@
  *	structure pointed to its argument. This macro will always be defined
  *	if USE_STDIO_BASE is defined.
  */
-#define USE_STDIO_BASE 	/**/
+/*#define USE_STDIO_BASE 	/ **/
 #ifdef USE_STDIO_BASE
 #define FILE_base(fp)	((fp)->_IO_read_base)
 #define FILE_bufsiz(fp)	((fp)->_IO_read_end - (fp)->_IO_read_base)
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "3.2.0-5-amd64"		/**/
+#define OSVERS "4.9.0-11-amd64"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2660,7 +2660,7 @@
  *	This symbol, if defined, indicates that the "fast stdio"
  *	is available to manipulate the stdio buffers directly.
  */
-#define HAS_FAST_STDIO		/**/
+/*#define HAS_FAST_STDIO		/ **/
 
 /* HAS_FCHDIR:
  *	This symbol, if defined, indicates that the fchdir routine is
@@ -3774,8 +3774,8 @@
 #define DB_Hash_t	u_int32_t		/**/
 #define DB_Prefix_t	size_t  	/**/
 #define DB_VERSION_MAJOR_CFG	5  	/**/
-#define DB_VERSION_MINOR_CFG	1  	/**/
-#define DB_VERSION_PATCH_CFG	29  	/**/
+#define DB_VERSION_MINOR_CFG	3  	/**/
+#define DB_VERSION_PATCH_CFG	28  	/**/
 
 /* I_FENV:
  *	This symbol, if defined, indicates to the C program that it should
