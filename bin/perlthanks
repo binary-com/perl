@@ -2,7 +2,7 @@
     eval 'exec /home/git/binary-com/perl/bin/perl -S $0 ${1+"$@"}'
 	if $running_under_some_shell;
 
-my $config_tag1 = '5.26.2 - Wed Feb 26 04:12:41 UTC 2020';
+my $config_tag1 = '5.26.2 - Thu Apr  1 06:04:30 UTC 2021';
 
 my $patchlevel_date = 1521920647;
 my @patches = Config::local_patches();
