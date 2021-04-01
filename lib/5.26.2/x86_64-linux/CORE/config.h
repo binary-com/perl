@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Wed Feb 26 04:12:41 UTC 2020
- * Configured by     : zak
- * Target system     : linux qa17.regentmarkets.com 4.9.0-11-amd64 #1 smp debian 4.9.189-3+deb9u1 (2019-09-20) x86_64 gnulinux 
+ * Configuration time: Thu Apr  1 06:04:30 UTC 2021
+ * Configured by     : kalaiselvan
+ * Target system     : linux qa68.regentmarkets.com 4.19.0-10-cloud-amd64 #1 smp debian 4.19.132-1 (2020-07-24) x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -20,7 +20,7 @@
 /* LOC_SED:
  *	This symbol holds the complete pathname to the sed program.
  */
-#define LOC_SED 	"/bin/sed"	/**/
+#define LOC_SED 	"/usr/bin/sed"	/**/
 
 /* HAS_ALARM:
  *	This symbol, if defined, indicates that the alarm routine is
@@ -664,7 +664,7 @@
  *	This symbol, if defined, indicates that <rpcsvc/dbm.h> exists and
  *	should be included.
  */
-#define I_DBM	/**/
+/*#define I_DBM	/ **/
 /*#define I_RPCSVC_DBM	/ **/
 
 /* I_DLFCN:
@@ -689,7 +689,7 @@
  *	This symbol, if defined, indicates that <gdbm.h> exists and should
  *	be included.
  */
-#define I_GDBM	/**/
+/*#define I_GDBM	/ **/
 
 /* I_LIMITS:
  *	This symbol, if defined, indicates to the C program that it should
@@ -1229,9 +1229,9 @@
  */
 /*#define USE_STDIO_PTR 	/ **/
 #ifdef USE_STDIO_PTR
-#define FILE_ptr(fp)	((fp)->_IO_read_ptr)
+#define FILE_ptr(fp)	((fp)->_ptr)
 /*#define STDIO_PTR_LVALUE 		/ **/
-#define FILE_cnt(fp)	((fp)->_IO_read_end - (fp)->_IO_read_ptr)
+#define FILE_cnt(fp)	((fp)->_cnt)
 /*#define STDIO_CNT_LVALUE 		/ **/
 /*#define STDIO_PTR_LVAL_SETS_CNT	/ **/
 /*#define STDIO_PTR_LVAL_NOCHANGE_CNT	/ **/
@@ -1259,8 +1259,8 @@
  */
 /*#define USE_STDIO_BASE 	/ **/
 #ifdef USE_STDIO_BASE
-#define FILE_base(fp)	((fp)->_IO_read_base)
-#define FILE_bufsiz(fp)	((fp)->_IO_read_end - (fp)->_IO_read_base)
+#define FILE_base(fp)	((fp)->_base)
+#define FILE_bufsiz(fp)	((fp)->_cnt + (fp)->_ptr - (fp)->_base)
 #endif
 
 /* HAS_VPRINTF:
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "4.9.0-11-amd64"		/**/
+#define OSVERS "4.19.0-10-cloud-amd64"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -1783,7 +1783,7 @@
 #define HAS_UNAME		/**/
 /*#define HAS_PHOSTNAME	/ **/
 #ifdef HAS_PHOSTNAME
-#define PHOSTNAME "/bin/hostname"	/* How to get the host name */
+#define PHOSTNAME "/usr/bin/hostname"	/* How to get the host name */
 #endif
 
 /* HAS_GETNETBYADDR:
@@ -2293,7 +2293,7 @@
  */
 /*#define I_NDBM	/ **/
 /*#define I_GDBMNDBM	/ **/
-#define I_GDBM_NDBM	/**/
+/*#define I_GDBM_NDBM	/ **/
 /*#define NDBM_H_USES_PROTOTYPES	/ **/
 /*#define GDBMNDBM_H_USES_PROTOTYPES	/ **/
 /*#define GDBM_NDBM_H_USES_PROTOTYPES	/ **/
@@ -2476,9 +2476,9 @@
  *	This variable contains the number of elements of the SIG_NAME
  *	and SIG_NUM arrays, excluding the final NULL entry.
  */
-#define SIG_NAME "ZERO", "HUP", "INT", "QUIT", "ILL", "TRAP", "ABRT", "BUS", "FPE", "KILL", "USR1", "SEGV", "USR2", "PIPE", "ALRM", "TERM", "STKFLT", "CHLD", "CONT", "STOP", "TSTP", "TTIN", "TTOU", "URG", "XCPU", "XFSZ", "VTALRM", "PROF", "WINCH", "IO", "PWR", "SYS", "NUM32", "NUM33", "RTMIN", "NUM35", "NUM36", "NUM37", "NUM38", "NUM39", "NUM40", "NUM41", "NUM42", "NUM43", "NUM44", "NUM45", "NUM46", "NUM47", "NUM48", "NUM49", "NUM50", "NUM51", "NUM52", "NUM53", "NUM54", "NUM55", "NUM56", "NUM57", "NUM58", "NUM59", "NUM60", "NUM61", "NUM62", "NUM63", "RTMAX", "IOT", "CLD", "POLL", "UNUSED", 0		/**/
-#define SIG_NUM  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 6, 17, 29, 31, 0		/**/
-#define SIG_SIZE 69			/**/
+#define SIG_NAME "ZERO", "HUP", "INT", "QUIT", "ILL", "TRAP", "ABRT", "BUS", "FPE", "KILL", "USR1", "SEGV", "USR2", "PIPE", "ALRM", "TERM", "STKFLT", "CHLD", "CONT", "STOP", "TSTP", "TTIN", "TTOU", "URG", "XCPU", "XFSZ", "VTALRM", "PROF", "WINCH", "IO", "PWR", "SYS", "NUM32", "NUM33", "RTMIN", "NUM35", "NUM36", "NUM37", "NUM38", "NUM39", "NUM40", "NUM41", "NUM42", "NUM43", "NUM44", "NUM45", "NUM46", "NUM47", "NUM48", "NUM49", "NUM50", "NUM51", "NUM52", "NUM53", "NUM54", "NUM55", "NUM56", "NUM57", "NUM58", "NUM59", "NUM60", "NUM61", "NUM62", "NUM63", "RTMAX", "IOT", "CLD", "POLL", 0		/**/
+#define SIG_NUM  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 6, 17, 29, 0		/**/
+#define SIG_SIZE 68			/**/
 
 /* USE_CROSS_COMPILE:
  *	This symbol, if defined, indicates that Perl is being cross-compiled.
@@ -2610,7 +2610,7 @@
  *	to the program to supply one.  A good guess is
  *		extern int dbminit(char *);
  */
-#define	HAS_DBMINIT_PROTO	/**/
+/*#define	HAS_DBMINIT_PROTO	/ **/
 
 /* HAS_DIR_DD_FD:
  *	This symbol, if defined, indicates that the the DIR* dirstream
@@ -3086,7 +3086,7 @@
  *	This symbol, if defined, indicates that libm exports _LIB_VERSION
  *	and that math.h defines the enum to manipulate it.
  */
-#define LIBM_LIB_VERSION		/**/
+/*#define LIBM_LIB_VERSION		/ **/
 
 /* HAS_LLRINT:
  *	This symbol, if defined, indicates that the llrint routine is
@@ -3261,7 +3261,7 @@
 #define	HAS_FREELOCALE	/**/
 #define	HAS_USELOCALE	/**/
 /*#define	HAS_QUERYLOCALE	/ **/
-#define	I_XLOCALE               /**/
+/*#define	I_XLOCALE               / **/
 
 /* HAS_NEXTAFTER:
  *	This symbol, if defined, indicates that the nextafter routine is
@@ -3681,7 +3681,7 @@
  *	This symbol, if defined, indicates that the ustat system call is
  *	available to query file system statistics by dev_t.
  */
-#define HAS_USTAT		/**/
+/*#define HAS_USTAT		/ **/
 
 /* HAS_WCSCMP:
  *	This symbol, if defined, indicates that the wcscmp routine is
@@ -3773,9 +3773,9 @@
  */
 #define DB_Hash_t	u_int32_t		/**/
 #define DB_Prefix_t	size_t  	/**/
-#define DB_VERSION_MAJOR_CFG	5  	/**/
-#define DB_VERSION_MINOR_CFG	3  	/**/
-#define DB_VERSION_PATCH_CFG	28  	/**/
+#define DB_VERSION_MAJOR_CFG	  	/**/
+#define DB_VERSION_MINOR_CFG	  	/**/
+#define DB_VERSION_PATCH_CFG	  	/**/
 
 /* I_FENV:
  *	This symbol, if defined, indicates to the C program that it should
@@ -3930,7 +3930,7 @@
  *	This symbol, if defined, indicates that <ustat.h> exists and
  *	should be included.
  */
-#define	I_USTAT		/**/
+/*#define	I_USTAT		/ **/
 
 /* DOUBLEINFBYTES:
  *	This symbol, if defined, is a comma-separated list of
