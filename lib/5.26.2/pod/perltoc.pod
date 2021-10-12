@@ -20144,146 +20144,6 @@ utf8, encode, compress, int32, null
 
 =back
 
-=head2 DB_File - Perl5 access to Berkeley DB version 1.x
-
-=over 4
-
-=item SYNOPSIS
-
-=item DESCRIPTION
-
-B<DB_HASH>, B<DB_BTREE>, B<DB_RECNO>
-
-=over 4
-
-=item Using DB_File with Berkeley DB version 2 or greater
-
-=item Interface to Berkeley DB
-
-=item Opening a Berkeley DB Database File
-
-=item Default Parameters
-
-=item In Memory Databases
-
-=back
-
-=item DB_HASH
-
-=over 4
-
-=item A Simple Example
-
-=back
-
-=item DB_BTREE
-
-=over 4
-
-=item Changing the BTREE sort order
-
-=item Handling Duplicate Keys 
-
-=item The get_dup() Method
-
-=item The find_dup() Method
-
-=item The del_dup() Method
-
-=item Matching Partial Keys 
-
-=back
-
-=item DB_RECNO
-
-=over 4
-
-=item The 'bval' Option
-
-=item A Simple Example
-
-=item Extra RECNO Methods
-
-B<$X-E<gt>push(list) ;>, B<$value = $X-E<gt>pop ;>, B<$X-E<gt>shift>,
-B<$X-E<gt>unshift(list) ;>, B<$X-E<gt>length>, B<$X-E<gt>splice(offset,
-length, elements);>
-
-=item Another Example
-
-=back
-
-=item THE API INTERFACE
-
-B<$status = $X-E<gt>get($key, $value [, $flags]) ;>, B<$status =
-$X-E<gt>put($key, $value [, $flags]) ;>, B<$status = $X-E<gt>del($key [,
-$flags]) ;>, B<$status = $X-E<gt>fd ;>, B<$status = $X-E<gt>seq($key,
-$value, $flags) ;>, B<$status = $X-E<gt>sync([$flags]) ;>
-
-=item DBM FILTERS
-
-=over 4
-
-=item DBM Filter Low-level API
-
-B<filter_store_key>, B<filter_store_value>, B<filter_fetch_key>,
-B<filter_fetch_value>
-
-=item The Filter
-
-=item An Example -- the NULL termination problem.
-
-=item Another Example -- Key is a C int.
-
-=back
-
-=item HINTS AND TIPS 
-
-=over 4
-
-=item Locking: The Trouble with fd
-
-=item Safe ways to lock a database
-
-B<Tie::DB_Lock>, B<Tie::DB_LockFile>, B<DB_File::Lock>
-
-=item Sharing Databases With C Applications
-
-=item The untie() Gotcha
-
-=back
-
-=item COMMON QUESTIONS
-
-=over 4
-
-=item Why is there Perl source in my database?
-
-=item How do I store complex data structures with DB_File?
-
-=item What does "wide character in subroutine entry" mean?
-
-=item What does "Invalid Argument" mean?
-
-=item What does "Bareword 'DB_File' not allowed" mean? 
-
-=back
-
-=item REFERENCES
-
-=item HISTORY
-
-=item BUGS
-
-=item AVAILABILITY
-
-=item COPYRIGHT
-
-=item SEE ALSO
-
-=item AUTHOR
-
-=back
-
 =head2 Data::Dumper - stringified perl data structures, suitable for both
 printing and C<eval>
 
@@ -24308,22 +24168,6 @@ __DATA__ is ignored, Max. codesize limited to 32-bit
 =item AUTHORS
 
 =item COPYRIGHT
-
-=back
-
-=head2 GDBM_File - Perl5 access to the gdbm library.
-
-=over 4
-
-=item SYNOPSIS
-
-=item DESCRIPTION
-
-=item AVAILABILITY
-
-=item BUGS
-
-=item SEE ALSO
 
 =back
 
@@ -29215,28 +29059,6 @@ version B<(required)>, dir, files, prefix
 
 =back
 
-=head2 NDBM_File - Tied access to ndbm files
-
-=over 4
-
-=item SYNOPSIS
-
-=item DESCRIPTION
-
-C<O_RDONLY>, C<O_WRONLY>, C<O_RDWR>
-
-=item DIAGNOSTICS
-
-=over 4
-
-=item C<ndbm store returned -1, errno 22, key "..." at ...>
-
-=back
-
-=item BUGS AND WARNINGS
-
-=back
-
 =head2 NEXT - Provide a pseudo-class NEXT (et al) that allows method
 redispatch
 
@@ -29792,28 +29614,6 @@ functions
 =item BUGS
 
 =item AUTHOR
-
-=back
-
-=head2 ODBM_File - Tied access to odbm files
-
-=over 4
-
-=item SYNOPSIS
-
-=item DESCRIPTION
-
-C<O_RDONLY>, C<O_WRONLY>, C<O_RDWR>
-
-=item DIAGNOSTICS
-
-=over 4
-
-=item C<odbm store returned -1, errno 22, key "..." at ...>
-
-=back
-
-=item BUGS AND WARNINGS
 
 =back
 
