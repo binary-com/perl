@@ -9,7 +9,7 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Tue Oct 12 11:06:14 UTC 2021
+ * Configuration time: Wed Oct 27 10:51:49 UTC 2021
  * Configured by     : chylli
  * Target system     : linux qa68.regentmarkets.com 5.10.0-8-cloud-amd64 #1 smp debian 5.10.46-5 (2021-09-23) x86_64 gnulinux 
  */
@@ -1470,8 +1470,8 @@
  *	This symbol contains the ~name expanded version of SITEARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define SITEARCH "/home/git/binary-com/perl/lib/site_perl/5.26.2/x86_64-linux"		/**/
-#define SITEARCH_EXP "/home/git/binary-com/perl/lib/site_perl/5.26.2/x86_64-linux"		/**/
+#define SITEARCH "/home/git/regentmarkets/cpan-private/local/lib/perl5/x86_64-linux"		/**/
+#define SITEARCH_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5/x86_64-linux"		/**/
 
 /* SITELIB:
  *	This symbol contains the name of the private library for this package.
@@ -1493,9 +1493,9 @@
  *	removed.  The elements in inc_version_list (inc_version_list.U) can
  *	be tacked onto this variable to generate a list of directories to search.
  */
-#define SITELIB "/home/git/binary-com/perl/lib/site_perl/5.26.2"		/**/
-#define SITELIB_EXP "/home/git/binary-com/perl/lib/site_perl/5.26.2"		/**/
-#define SITELIB_STEM "/home/git/binary-com/perl/lib/site_perl"		/**/
+#define SITELIB "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
+#define SITELIB_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
+#define SITELIB_STEM "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
 
 /* PERL_VENDORARCH:
  *	If defined, this symbol contains the name of a private library.
