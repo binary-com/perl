@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Wed Feb 26 04:12:41 UTC 2020
- * Configured by     : zak
- * Target system     : linux qa17.regentmarkets.com 4.9.0-11-amd64 #1 smp debian 4.9.189-3+deb9u1 (2019-09-20) x86_64 gnulinux 
+ * Configuration time: Fri Oct 29 10:10:35 UTC 2021
+ * Configured by     : chylli
+ * Target system     : linux qa22.regentmarkets.com 4.9.0-16-amd64 #1 smp debian 4.9.272-2 (2021-07-19) x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -664,7 +664,7 @@
  *	This symbol, if defined, indicates that <rpcsvc/dbm.h> exists and
  *	should be included.
  */
-#define I_DBM	/**/
+/*#define I_DBM	/ **/
 /*#define I_RPCSVC_DBM	/ **/
 
 /* I_DLFCN:
@@ -689,7 +689,7 @@
  *	This symbol, if defined, indicates that <gdbm.h> exists and should
  *	be included.
  */
-#define I_GDBM	/**/
+/*#define I_GDBM	/ **/
 
 /* I_LIMITS:
  *	This symbol, if defined, indicates to the C program that it should
@@ -1470,8 +1470,8 @@
  *	This symbol contains the ~name expanded version of SITEARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define SITEARCH "/home/git/binary-com/perl/lib/site_perl/5.26.2/x86_64-linux"		/**/
-#define SITEARCH_EXP "/home/git/binary-com/perl/lib/site_perl/5.26.2/x86_64-linux"		/**/
+#define SITEARCH "/home/git/regentmarkets/cpan-private/local/lib/perl5/x86_64-linux"		/**/
+#define SITEARCH_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5/x86_64-linux"		/**/
 
 /* SITELIB:
  *	This symbol contains the name of the private library for this package.
@@ -1493,9 +1493,9 @@
  *	removed.  The elements in inc_version_list (inc_version_list.U) can
  *	be tacked onto this variable to generate a list of directories to search.
  */
-#define SITELIB "/home/git/binary-com/perl/lib/site_perl/5.26.2"		/**/
-#define SITELIB_EXP "/home/git/binary-com/perl/lib/site_perl/5.26.2"		/**/
-#define SITELIB_STEM "/home/git/binary-com/perl/lib/site_perl"		/**/
+#define SITELIB "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
+#define SITELIB_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
+#define SITELIB_STEM "/home/git/regentmarkets/cpan-private/local/lib/perl5"		/**/
 
 /* PERL_VENDORARCH:
  *	If defined, this symbol contains the name of a private library.
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "4.9.0-11-amd64"		/**/
+#define OSVERS "4.9.0-16-amd64"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2293,7 +2293,7 @@
  */
 /*#define I_NDBM	/ **/
 /*#define I_GDBMNDBM	/ **/
-#define I_GDBM_NDBM	/**/
+/*#define I_GDBM_NDBM	/ **/
 /*#define NDBM_H_USES_PROTOTYPES	/ **/
 /*#define GDBMNDBM_H_USES_PROTOTYPES	/ **/
 /*#define GDBM_NDBM_H_USES_PROTOTYPES	/ **/
@@ -2610,7 +2610,7 @@
  *	to the program to supply one.  A good guess is
  *		extern int dbminit(char *);
  */
-#define	HAS_DBMINIT_PROTO	/**/
+/*#define	HAS_DBMINIT_PROTO	/ **/
 
 /* HAS_DIR_DD_FD:
  *	This symbol, if defined, indicates that the the DIR* dirstream
@@ -3773,9 +3773,9 @@
  */
 #define DB_Hash_t	u_int32_t		/**/
 #define DB_Prefix_t	size_t  	/**/
-#define DB_VERSION_MAJOR_CFG	5  	/**/
-#define DB_VERSION_MINOR_CFG	3  	/**/
-#define DB_VERSION_PATCH_CFG	28  	/**/
+#define DB_VERSION_MAJOR_CFG	  	/**/
+#define DB_VERSION_MINOR_CFG	  	/**/
+#define DB_VERSION_PATCH_CFG	  	/**/
 
 /* I_FENV:
  *	This symbol, if defined, indicates to the C program that it should
