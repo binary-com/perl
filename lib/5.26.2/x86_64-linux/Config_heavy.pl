@@ -75,7 +75,7 @@ sub header_files {
 #
 ## Package name      : perl5
 ## Source directory  : .
-## Configuration time: Wed Oct 27 10:51:49 UTC 2021
+## Configuration time: Wed Jan 19 08:19:35 UTC 2022
 ## Configured by     : chylli
 ## Target system     : linux qa68.regentmarkets.com 5.10.0-8-cloud-amd64 #1 smp debian 5.10.46-5 (2021-09-23) x86_64 gnulinux 
 #
@@ -235,7 +235,7 @@ ccsymbols=''
 ccversion=''
 cf_by='chylli'
 cf_email='chylli@qa68.regentmarkets.com'
-cf_time='Wed Oct 27 10:51:49 UTC 2021'
+cf_time='Wed Jan 19 08:19:35 UTC 2022'
 charbits='8'
 charsize='1'
 chgrp=''
