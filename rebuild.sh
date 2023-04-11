@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-VERSION=$VERSION
+VERSION=5.36.0
 
 wget http://www.cpan.org/src/5.0/perl-$VERSION.tar.gz
 rm -rf perl-$VERSION
