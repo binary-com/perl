@@ -1,10 +1,12 @@
 #!/bin/bash
 set -e
 
-wget http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
-rm -rf perl-5.26.2
-tar xzvf perl-5.26.2.tar.gz
-cd perl-5.26.2
+VERSION=$VERSION
+
+wget http://www.cpan.org/src/5.0/perl-$VERSION.tar.gz
+rm -rf perl-$VERSION
+tar xzvf perl-$VERSION.tar.gz
+cd perl-$VERSION
 
 # Apply patch for fixing Time::Local tests entering year 2020  (CPAN RT#124787)
 zcat ../patches/0001-Fix-Time-Local-tests.patch.gz | patch -p1 --verbose || exit 1
