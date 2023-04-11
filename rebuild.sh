@@ -8,9 +8,6 @@ rm -rf perl-$VERSION
 tar xzvf perl-$VERSION.tar.gz
 cd perl-$VERSION
 
-# Apply patch for fixing Time::Local tests entering year 2020  (CPAN RT#124787)
-zcat ../patches/0001-Fix-Time-Local-tests.patch.gz | patch -p1 --verbose || exit 1
-
 # Apply patch for fixing gcc 10 problem  https://github.com/openwrt/packages/pull/12178
 patch -Np1 < ../patches/999-fix-build-failure-against-gcc-10.patch
 
