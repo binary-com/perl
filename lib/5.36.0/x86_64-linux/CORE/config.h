@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Tue Apr 11 02:35:27 UTC 2023
- * Configured by     : qiangliu
- * Target system     : linux qa22.regentmarkets.com 5.10.0-21-cloud-amd64 #1 smp debian 5.10.162-1 (2023-01-21) x86_64 gnulinux 
+ * Configuration time: Sun May 14 16:11:06 UTC 2023
+ * Configured by     : chylli
+ * Target system     : linux qa22.regentmarkets.com 5.10.0-22-cloud-amd64 #1 smp debian 5.10.178-3 (2023-04-22) x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1369,7 +1369,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "5.10.0-21-cloud-amd64"		/**/
+#define OSVERS "5.10.0-22-cloud-amd64"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.

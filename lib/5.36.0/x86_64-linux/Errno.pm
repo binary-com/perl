@@ -10,8 +10,8 @@ use strict;
 
 use Config;
 "$Config{'archname'}-$Config{'osvers'}" eq
-"x86_64-linux-5.10.0-21-cloud-amd64" or
-	die "Errno architecture (x86_64-linux-5.10.0-21-cloud-amd64) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
+"x86_64-linux-5.10.0-22-cloud-amd64" or
+	die "Errno architecture (x86_64-linux-5.10.0-22-cloud-amd64) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
 
 our $VERSION = "1.36";
 $VERSION = eval $VERSION;
