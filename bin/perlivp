@@ -1,8 +1,8 @@
 #!/home/git/binary-com/perl/bin/perl
     eval 'exec /home/git/binary-com/perl/bin/perl -S $0 ${1+"$@"}'
-        if 0; # ^ Run only under a shell
+        if $running_under_some_shell;
 
-# perlivp v5.36.0
+# perlivp v5.26.2
 
 BEGIN { pop @INC if $INC[-1] eq '.' }
 
@@ -67,7 +67,7 @@ $tests_total++;
 
 print "## Checking Perl version via variable '\$]'.\n" if $opt{'p'};
 
-my $ivp_VERSION = "5.036000";
+my $ivp_VERSION = "5.026002";
 
 
 $label = 'Perl version correct';
@@ -108,7 +108,7 @@ foreach (@INC) {
     $INC_total++;
 }
 
-$label = '@INC directories exist';
+$label = '@INC directoreis exist';
 if ($INC_total == $INC_there) {
     print "ok 3 $label\n";
     $pass__total++;
