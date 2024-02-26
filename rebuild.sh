@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+rm -rf bin lib man
 wget http://www.cpan.org/src/5.0/perl-5.38.2.tar.gz
 rm -rf perl-5.38.2
 tar xzvf perl-5.38.2.tar.gz
