@@ -1,0 +1,48 @@
+name: Build workflow
+run-name: Build workflow
+on:
+  push:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest # Maybe here is a blocker
+    container:
+      image: debian:bullseye
+    defaults:
+      run:
+        shell: bash -le {0}
+    env:
+      BRANCH: ${{ github.ref_name }}
+    steps:
+      - name: prepare
+        
+        run: |
+          apt-get update
+          apt-get -y dist-upgrade
+          apt-get -y install locales build-essential gettext libpq5 libpq-dev make gcc git openssh-client curl wget sudo lsb-release socat redis-server cmake
+          echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
+          locale-gen
+          if [[ ! $BRANCH =~ perl-[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+              echo "Error: Branch name must be perl-<version>"
+              exit 1
+          fi
+          VERSION=$(echo $BRANCH | sed -e 's/.*perl-\([0-9]*\.[0-9]*\.[0-9]*\).*/\1/')
+
+          echo "VERSION=$VERSION" | tee -a $GITHUB_ENV 
+          git config --global user.email "cibot@deriv.com"
+          git config --global user.name "ci bot"
+          git config --global --add safe.directory $PWD # ignore ownership problem
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4
+      - name: compile
+        run: |
+          bash ./rebuild.sh
+      - name: push
+        run: |
+          rm -rf lib bin man
+          mv /home/git/binary-com/perl/{bin,lib} .
+          git add lib bin
+          git commit -m "[ci skip] compile $VERSION"
+          git push origin HEAD:$BRANCH
