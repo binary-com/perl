@@ -1,6 +1,6 @@
 # perl
 
-Custom compiled perl for Binary.com
+Custom compiled perl for deriv.com
 
 ## compiling steps
 
