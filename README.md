@@ -5,7 +5,7 @@ Custom compiled perl for deriv.com
 ## compiling steps
 
 ```bash
-VERSION=5.26.1 ./rebuild.sh
+VERSION=5.26.2 ./rebuild.sh
 ```
 
 ## compiling it with CI
