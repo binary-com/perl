@@ -1,14 +1,19 @@
 # perl
-Custom compiled perl for Binary.com
 
-# compiling steps
+Custom compiled perl for deriv.com
 
-Download source code from http://www.cpan.org/src/5.0/perl-5.26.2.tar.gz
+## compiling steps
 
-We defined `-Dusesitecustomize` and removed `-Dusethreads`. Most of other parameters are copied from `perl -V | grep config_args`
-Run following command:
+```bash
+VERSION=5.26.2 ./rebuild.sh
 ```
-./Configure -Dusesitecustomize -Dinc_version_list=none -Dprefix=/home/git/binary-com/perl -Dvendorprefix=/home/git/regentmarkets/cpan/local -Dvendorlib=/home/git/regentmarkets/cpan/local/lib/perl5 -Dvendorarch=/home/git/regentmarkets/cpan/local/lib/perl5/x86_64-linux -Duselargefiles -Dccflags="-DDEBIAN -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security" -Dldflags=" -Wl,-z,relro" -Dlddlflags="-shared -Wl,-z,relro" -Dcccdlflags="-fPIC" -Duse64bitint -Dman1ext=1 -Dman3ext=3perl -Dpager=/usr/bin/sensible-pager -Uafs -Ud_csh -Ud_ualarm -Uusesfio -Uusenm -Uuseithreads -Uusemultiplicity -Ui_libutil -DDEBUGGING=-g -Doptimize=-O2 -Duseshrplib -des
-make
-make install
-```
+
+## compiling it with CI
+
+1. enable CI test in your forked repo : 
+   at https://github.com/username/perl/settings/actions set `Allow all actions and reusable workflows`
+   and `Read and write permissions`. Don't forget to click `save` at both section.
+2. Or create a new branch directly on binary-com/perl repo
+3. create a branch whose name include a perl version `perl-x.yy.zz`, e.g. `upgrade/perl.5.38.2`
+
+Then CI will download and compile perl and push it to your branch
