@@ -1,9 +1,8 @@
 #!/home/git/binary-com/perl/bin/perl
     eval 'exec /home/git/binary-com/perl/bin/perl -S $0 ${1+"$@"}'
-	if 0; # ^ Run only under a shell
+	if $running_under_some_shell;
 #!/usr/bin/perl
 use strict;
-use warnings;
 
 BEGIN { pop @INC if $INC[-1] eq '.' }
 use File::Find;
