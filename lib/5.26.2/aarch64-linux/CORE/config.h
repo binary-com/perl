@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Sat Oct 14 10:37:32 UTC 2023
- * Configured by     : nobody
- * Target system     : linux b09f1cd25827 6.4.16-linuxkit #1 smp preempt sat sep 23 13:36:48 utc 2023 aarch64 gnulinux 
+ * Configuration time: Thu Apr 18 14:55:16 UTC 2024
+ * Configured by     : root
+ * Target system     : linux 3d7558ea20ed 6.4.16-linuxkit #1 smp preempt sat sep 23 13:36:48 utc 2023 aarch64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1470,8 +1470,8 @@
  *	This symbol contains the ~name expanded version of SITEARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define SITEARCH "/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux"		/**/
-#define SITEARCH_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux"		/**/
+#define SITEARCH "/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux-gnu-thread-multi"		/**/
+#define SITEARCH_EXP "/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux-gnu-thread-multi"		/**/
 
 /* SITELIB:
  *	This symbol contains the name of the private library for this package.
@@ -1512,8 +1512,8 @@
  *	This symbol contains the ~name expanded version of PERL_VENDORARCH, to be used
  *	in programs that are not prepared to deal with ~ expansion at run-time.
  */
-#define PERL_VENDORARCH "/home/git/regentmarkets/cpan/local/lib/perl5/aarch64-linux"		/**/
-#define PERL_VENDORARCH_EXP "/home/git/regentmarkets/cpan/local/lib/perl5/aarch64-linux"		/**/
+#define PERL_VENDORARCH "/home/git/regentmarkets/cpan/local/lib/perl5/aarch64-linux-gnu-thread-multi"		/**/
+#define PERL_VENDORARCH_EXP "/home/git/regentmarkets/cpan/local/lib/perl5/aarch64-linux-gnu-thread-multi"		/**/
 
 /* PERL_VENDORLIB_EXP:
  *	This symbol contains the ~name expanded version of VENDORLIB, to be used

@@ -102,7 +102,7 @@ tie %Config, 'Config', {
     path_sep => ':',
     privlibexp => '/home/git/binary-com/perl/lib/5.26.2',
     scriptdir => '/home/git/binary-com/perl/bin',
-    sitearchexp => '/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux',
+    sitearchexp => '/home/git/regentmarkets/cpan-private/local/lib/perl5/aarch64-linux-gnu-thread-multi',
     sitelibexp => '/home/git/regentmarkets/cpan-private/local/lib/perl5',
     so => 'so',
     useithreads => undef,
