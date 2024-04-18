@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Wed Jan 19 08:19:35 UTC 2022
- * Configured by     : chylli
- * Target system     : linux qa68.regentmarkets.com 5.10.0-8-cloud-amd64 #1 smp debian 5.10.46-5 (2021-09-23) x86_64 gnulinux 
+ * Configuration time: Tue Mar 26 09:06:16 UTC 2024
+ * Configured by     : root
+ * Target system     : linux 4754b32b4a31 6.5.0-1016-azure #16~22.04.1-ubuntu smp fri feb 16 15:42:02 utc 2024 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -20,7 +20,7 @@
 /* LOC_SED:
  *	This symbol holds the complete pathname to the sed program.
  */
-#define LOC_SED 	"/usr/bin/sed"	/**/
+#define LOC_SED 	"/bin/sed"	/**/
 
 /* HAS_ALARM:
  *	This symbol, if defined, indicates that the alarm routine is
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "5.10.0-8-cloud-amd64"		/**/
+#define OSVERS "6.5.0-1016-azure"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -1783,7 +1783,7 @@
 #define HAS_UNAME		/**/
 /*#define HAS_PHOSTNAME	/ **/
 #ifdef HAS_PHOSTNAME
-#define PHOSTNAME "/usr/bin/hostname"	/* How to get the host name */
+#define PHOSTNAME "/bin/hostname"	/* How to get the host name */
 #endif
 
 /* HAS_GETNETBYADDR:
