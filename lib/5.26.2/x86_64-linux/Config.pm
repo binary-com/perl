@@ -96,7 +96,7 @@ tie %Config, 'Config', {
     inc_version_list => ' ',
     intsize => '4',
     ldlibpthname => 'LD_LIBRARY_PATH',
-    libpth => '/usr/local/lib /usr/include/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib/../lib /usr/lib/x86_64-linux-gnu /usr/lib/../lib /lib',
+    libpth => '/usr/local/lib /usr/include/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib/../lib /usr/lib/x86_64-linux-gnu /usr/lib/../lib /lib /lib64 /usr/lib64',
     osname => 'linux',
     osvers => '6.8.0-1021-azure',
     path_sep => ':',

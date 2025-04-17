@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Thu Apr 17 08:17:34 UTC 2025
+ * Configuration time: Thu Apr 17 08:40:22 UTC 2025
  * Configured by     : root
- * Target system     : linux 57dd621e9abc 6.8.0-1021-azure #25-ubuntu smp wed jan 15 20:45:09 utc 2025 x86_64 gnulinux 
+ * Target system     : linux bd5fc8c5122f 6.8.0-1021-azure #25-ubuntu smp wed jan 15 20:45:09 utc 2025 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -20,7 +20,7 @@
 /* LOC_SED:
  *	This symbol holds the complete pathname to the sed program.
  */
-#define LOC_SED 	"/bin/sed"	/**/
+#define LOC_SED 	"/usr/bin/sed"	/**/
 
 /* HAS_ALARM:
  *	This symbol, if defined, indicates that the alarm routine is
@@ -1783,7 +1783,7 @@
 #define HAS_UNAME		/**/
 /*#define HAS_PHOSTNAME	/ **/
 #ifdef HAS_PHOSTNAME
-#define PHOSTNAME "/bin/hostname"	/* How to get the host name */
+#define PHOSTNAME "/usr/bin/hostname"	/* How to get the host name */
 #endif
 
 /* HAS_GETNETBYADDR:
@@ -2163,7 +2163,7 @@
  *	array is there.
  */
 #define HAS_STRERROR		/**/
-#define HAS_SYS_ERRLIST	/**/
+/*#define HAS_SYS_ERRLIST	/ **/
 #define Strerror(e) strerror(e)
 
 /* HAS_STRTOUL:
@@ -4998,7 +4998,7 @@
  *	routine is available to yield the execution of the current
  *	thread.	 sched_yield is preferable to pthread_yield.
  */
-#define HAS_PTHREAD_YIELD	/**/
+/*#define HAS_PTHREAD_YIELD	/ **/
 #define SCHED_YIELD	sched_yield()	/**/
 #define HAS_SCHED_YIELD	/**/
 
