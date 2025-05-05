@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Wed Jan 19 08:19:35 UTC 2022
- * Configured by     : chylli
- * Target system     : linux qa68.regentmarkets.com 5.10.0-8-cloud-amd64 #1 smp debian 5.10.46-5 (2021-09-23) x86_64 gnulinux 
+ * Configuration time: Thu Apr 17 08:40:22 UTC 2025
+ * Configured by     : root
+ * Target system     : linux bd5fc8c5122f 6.8.0-1021-azure #25-ubuntu smp wed jan 15 20:45:09 utc 2025 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "5.10.0-8-cloud-amd64"		/**/
+#define OSVERS "6.8.0-1021-azure"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2163,7 +2163,7 @@
  *	array is there.
  */
 #define HAS_STRERROR		/**/
-#define HAS_SYS_ERRLIST	/**/
+/*#define HAS_SYS_ERRLIST	/ **/
 #define Strerror(e) strerror(e)
 
 /* HAS_STRTOUL:
@@ -4998,7 +4998,7 @@
  *	routine is available to yield the execution of the current
  *	thread.	 sched_yield is preferable to pthread_yield.
  */
-#define HAS_PTHREAD_YIELD	/**/
+/*#define HAS_PTHREAD_YIELD	/ **/
 #define SCHED_YIELD	sched_yield()	/**/
 #define HAS_SCHED_YIELD	/**/
 
