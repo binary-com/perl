@@ -11,7 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest # Maybe here is a blocker
     container:
-      image: debian:bullseye
+      image: debian:bookworm
+      options: --platform=linux/arm64
     defaults:
       run:
         shell: bash -le {0}
