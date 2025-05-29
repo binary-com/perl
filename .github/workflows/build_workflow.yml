@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-latest # Maybe here is a blocker
+    runs-on: ubuntu-latest
     container:
       image: debian:bookworm
       options: --platform=linux/arm64
@@ -20,33 +20,47 @@ jobs:
     env:
       BRANCH: ${{ github.ref_name }}
     steps:
-      - name: prepare
-        
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+      
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4
+      
+      - name: Prepare environment
         run: |
           apt-get update
           apt-get -y dist-upgrade
           apt-get -y install locales build-essential gettext libpq5 libpq-dev make gcc git openssh-client curl wget sudo lsb-release socat redis-server cmake
           echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
           locale-gen
-          if [[ ! $BRANCH =~ perl-[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+          
+          if [[ ! "$BRANCH" =~ perl-[0-9]+\.[0-9]+\.[0-9]+ ]]; then
               echo "Error: Branch name must be perl-<version>"
               exit 1
           fi
+          
           VERSION=$(echo $BRANCH | sed -e 's/.*perl-\([0-9]*\.[0-9]*\.[0-9]*\).*/\1/')
-          VERSION=5.26.2
-          echo "VERSION=$VERSION" | tee -a $GITHUB_ENV 
+          echo "VERSION=$VERSION" | tee -a $GITHUB_ENV
+          
           git config --global user.email "cibot@deriv.com"
           git config --global user.name "ci bot"
-          git config --global --add safe.directory $PWD # ignore ownership problem
-      - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4
-      - name: compile
+          git config --global --add safe.directory $GITHUB_WORKSPACE
+      
+      - name: Update rebuild.sh for arm64
+        run: |
+          sed -i 's/x86_64-linux/aarch64-linux/g' rebuild.sh
+          sed -i "s|-Dprefix=/home/git/binary-com/perl|-Dprefix=$GITHUB_WORKSPACE|g" rebuild.sh
+      
+      - name: Compile
         run: |
           bash ./rebuild.sh
-      - name: push
+      
+      - name: Push changes
         run: |
           rm -rf lib bin man
-          mv /home/git/binary-com/perl/{bin,lib} .
+          cp -r $GITHUB_WORKSPACE/{bin,lib} .
           git add lib bin
           git commit -m "[ci skip] compile $VERSION"
           git push origin HEAD:$BRANCH
