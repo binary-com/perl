@@ -2,12 +2,40 @@ name: Build workflow
 run-name: Build workflow
 on:
   pull_request:
+  push:
+    branches-ignore:
+      - 'master'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-24.04-arm64
+    runs-on: ubuntu-latest
     steps:
-      - name: test arm64
-        run: echo $(arch)
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: circle4regentmarkets
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Run in ARM64 container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: regentmarkets/debian-perl:testarm64
+          options: --platform=linux/arm64
+          run: |
+            cd /home/git/binary-com/perl/perl-5.26.2
+            zcat ../patches/0001-Fix-Time-Local-tests.patch.gz | patch -p1 --verbose || exit 1
+            patch -Np1 < ../patches/999-fix-build-failure-against-gcc-10.patch
+            ./Configure -Dusesitecustomize -Dinc_version_list=none -Dprefix=/home/git/binary-com/perl -Dsitelib=/home/git/regentmarkets/cpan-private/local/lib/perl5 -Dsitearch=/home/git/regentmarkets/cpan-private/local/lib/perl5/x86_64-linux  -Dvendorprefix=/home/git/regentmarkets/cpan/local -Dvendorlib=/home/git/regentmarkets/cpan/local/lib/perl5 -Dvendorarch=/home/git/regentmarkets/cpan/local/lib/perl5/x86_64-linux -Duselargefiles -Dccflags="-DDEBIAN -D_FORTIFY_SOURCE=2 -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security" -Dldflags=" -Wl,-z,relro" -Dlddlflags="-shared -Wl,-z,relro" -Dcccdlflags="-fPIC" -Duse64bitint -Dman1dir=none -Dman3dir=none -Dpager=/usr/bin/sensible-pager -Uafs -Ud_csh -Ud_ualarm -Uusesfio -Uusenm -Uuseithreads -Uusemultiplicity -Ui_libutil -DDEBUGGING=-g -Doptimize=-O2 -Duseshrplib -des
+            make
+            make test
+            make install
+
