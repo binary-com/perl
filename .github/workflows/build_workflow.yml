@@ -1,17 +1,16 @@
 name: Build workflow
 run-name: Build workflow
 on:
-  push:
-    branches-ignore:
-      - 'master'
+  pull_request:
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-latest # Maybe here is a blocker
+    runs-on: github-hosted-binary01-arm6123 # Maybe here is a blocker
     container:
-      image: debian:bullseye
+      image: debian:bookworm
     defaults:
       run:
         shell: bash -le {0}
@@ -47,4 +46,4 @@ jobs:
           mv /home/git/binary-com/perl/{bin,lib} .
           git add lib bin
           git commit -m "[ci skip] compile $VERSION"
-          git push origin HEAD:$BRANCH
+          git push origin HEAD:test_$BRANCH
