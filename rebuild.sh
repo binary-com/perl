@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+VERSION=5.26
+
 if [ -z "$VERSION" ]; then
     echo "No VERSION environment variable set. Exiting..."
     exit 1

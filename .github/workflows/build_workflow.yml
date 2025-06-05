@@ -8,7 +8,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: github-hosted-binary01-arm64 # Maybe here is a blocker
+    runs-on: github-hosted-binary01-arm6123 # Maybe here is a blocker
     container:
       image: debian:bookworm
     defaults:
