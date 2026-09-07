@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Wed Jan 19 08:19:35 UTC 2022
- * Configured by     : chylli
- * Target system     : linux qa68.regentmarkets.com 5.10.0-8-cloud-amd64 #1 smp debian 5.10.46-5 (2021-09-23) x86_64 gnulinux 
+ * Configuration time: Mon Sep  7 02:28:03 UTC 2026
+ * Configured by     : root
+ * Target system     : linux cecda1a634d0 6.17.0-1022-azure #22-ubuntu smp mon jul 27 17:24:03 utc 2026 x86_64 gnulinux 
  */
 
 #ifndef _config_h_
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "linux"		/**/
-#define OSVERS "5.10.0-8-cloud-amd64"		/**/
+#define OSVERS "6.17.0-1022-azure"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2163,7 +2163,7 @@
  *	array is there.
  */
 #define HAS_STRERROR		/**/
-#define HAS_SYS_ERRLIST	/**/
+/*#define HAS_SYS_ERRLIST	/ **/
 #define Strerror(e) strerror(e)
 
 /* HAS_STRTOUL:
@@ -2874,7 +2874,7 @@
  *	This symbol, if defined, indicates that the futimes routine is
  *	available to change file descriptor time stamps with struct timevals.
  */
-#define HAS_FUTIMES		/**/
+/*#define HAS_FUTIMES		/ **/
 
 /* HAS_GAI_STRERROR:
  *	This symbol, if defined, indicates that the gai_strerror routine
@@ -3532,13 +3532,13 @@
  *	This symbol, if defined, indicates that the strlcat () routine is
  *	available to do string concatenation.
  */
-/*#define HAS_STRLCAT		/ **/
+#define HAS_STRLCAT		/**/
 
 /* HAS_STRLCPY:
  *	This symbol, if defined, indicates that the strlcpy () routine is
  *	available to do string copying.
  */
-/*#define HAS_STRLCPY		/ **/
+#define HAS_STRLCPY		/**/
 
 /* HAS_STRTOLD:
  *	This symbol, if defined, indicates that the strtold routine is
@@ -4998,7 +4998,7 @@
  *	routine is available to yield the execution of the current
  *	thread.	 sched_yield is preferable to pthread_yield.
  */
-#define HAS_PTHREAD_YIELD	/**/
+/*#define HAS_PTHREAD_YIELD	/ **/
 #define SCHED_YIELD	sched_yield()	/**/
 #define HAS_SCHED_YIELD	/**/
 
