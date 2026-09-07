@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest # Maybe here is a blocker
     container:
-      image: debian:bullseye
+      image: debian:trixie
     defaults:
       run:
         shell: bash -le {0}
