@@ -98,7 +98,7 @@ tie %Config, 'Config', {
     ldlibpthname => 'LD_LIBRARY_PATH',
     libpth => '/usr/local/lib /usr/include/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib/../lib /usr/lib/x86_64-linux-gnu /usr/lib/../lib /lib /lib64 /usr/lib64',
     osname => 'linux',
-    osvers => '5.10.0-8-cloud-amd64',
+    osvers => '6.17.0-1022-azure',
     path_sep => ':',
     privlibexp => '/home/git/binary-com/perl/lib/5.26.2',
     scriptdir => '/home/git/binary-com/perl/bin',
